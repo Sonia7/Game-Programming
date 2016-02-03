@@ -55,10 +55,10 @@ public class PlayerController : MonoBehaviour {
             this._currentPosition.x = 240;
         }
 
-        if (this._currentPosition.y< -150)
+        if (this._currentPosition.y< -190)
         {
 
-            this._currentPosition.y = -150;
+            this._currentPosition.y = -190;
         }
         if (this._currentPosition.y> 200)
         {
