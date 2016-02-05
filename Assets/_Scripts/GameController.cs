@@ -102,6 +102,7 @@ public class GameController : MonoBehaviour {
     public void RestartButtonClick()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        this.star.gameObject.SetActive(true);
     }
 }
 
