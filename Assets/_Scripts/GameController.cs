@@ -7,7 +7,8 @@ public class GameController : MonoBehaviour {
     // PRIVATE INSTANCE VARIABLES
     private int _scoreValue;
     private int _livesValue;
-
+    [SerializeField]
+    private AudioSource _gameOverSound;
     // PUBLIC ACCESS METHODS
     public int ScoreValue
     {
@@ -93,7 +94,7 @@ public class GameController : MonoBehaviour {
         this.ScoreLabel.gameObject.SetActive(false);
         this.player.gameObject.SetActive(false);
         this.star.gameObject.SetActive(false);
-      //  this._gameOverSound.Play();
+      this._gameOverSound.Play();
       //  this.RestartButton.gameObject.SetActive(true);
     }
 }
