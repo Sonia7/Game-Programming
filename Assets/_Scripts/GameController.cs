@@ -38,7 +38,7 @@ public class GameController : MonoBehaviour {
 
 
     // PUBLIC INSTANCE VARIABLES
-    public int enemyNumber = 2;
+    public int enemyNumber = 3;
     public EnemyController  No_of_Enemy;
 
 
