@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -55,6 +56,7 @@ public class GameController : MonoBehaviour {
     public Text ScoreLabel;
     public Text GameOverLabel;
     public Text HighScoreLabel;
+    public Button RestartButton;
 
     // Use this for initialization
     void Start()
@@ -78,7 +80,7 @@ public class GameController : MonoBehaviour {
         this.LivesValue = 5;
         this.HighScoreLabel.gameObject.SetActive(false);
         this.GameOverLabel.gameObject.SetActive(false);
-      //  this.RestartButton.gameObject.SetActive(false);
+      this.RestartButton.gameObject.SetActive(false);
 
         for (int cloudCount = 0; cloudCount < this.enemyNumber; cloudCount++)
         {
@@ -95,7 +97,11 @@ public class GameController : MonoBehaviour {
         this.player.gameObject.SetActive(false);
         this.star.gameObject.SetActive(false);
       this._gameOverSound.Play();
-      //  this.RestartButton.gameObject.SetActive(true);
+       this.RestartButton.gameObject.SetActive(true);
+    }
+    public void RestartButtonClick()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 
