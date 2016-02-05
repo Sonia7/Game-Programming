@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
@@ -18,7 +19,7 @@ public class GameController : MonoBehaviour {
         set
         {
             this._scoreValue = value;
-            Debug.Log(this._scoreValue);
+            this.ScoreLabel.text = "Score: " + this._scoreValue;
         }
     }
 
@@ -32,7 +33,7 @@ public class GameController : MonoBehaviour {
         set
         {
             this._livesValue = value;
-            Debug.Log(this._livesValue);
+            this.LivesLabel.text = "lives: " + this._livesValue;
         }
     }
 
@@ -40,6 +41,8 @@ public class GameController : MonoBehaviour {
     // PUBLIC INSTANCE VARIABLES
     public int enemyNumber = 3;
     public EnemyController  No_of_Enemy;
+    public Text LivesLabel;
+    public Text ScoreLabel;
 
 
     // Use this for initialization
