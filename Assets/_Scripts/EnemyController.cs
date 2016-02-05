@@ -5,8 +5,8 @@ public class EnemyController : MonoBehaviour {
     // PUBLIC INSTANCE VARIABLES
     public float minVerticalSpeed = -1f;
     public float maxVerticalSpeed = 1f;
-    public float minHorizontalSpeed = 4f;
-    public float maxHorizontalSpeed = 8f;
+    public float minHorizontalSpeed = 3f;
+    public float maxHorizontalSpeed = 5f;
 
     //PRIVATE INSTANCE VARIABLES
     private Transform _transform;

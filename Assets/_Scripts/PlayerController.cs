@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-    public float speed = 5f;
+    public float speed = 6f;
     private float _playerInput;
     private Transform _transform;
     private Vector2 _currentPosition;
