@@ -4,8 +4,8 @@ using System.Collections;
 public class PlayerCollider : MonoBehaviour {
 
     private AudioSource[] _audioSources;
-    private AudioSource _islandSound;
-    private AudioSource _cloudSound;
+    private AudioSource _StarSound;
+    private AudioSource _EnemySound;
 
     // PUBLIC INSTANCE VARIABLES
     public GameController gameController;
@@ -14,9 +14,9 @@ public class PlayerCollider : MonoBehaviour {
     void Start()
     {
         // Initialize the audioSources array
-       // this._audioSources = gameObject.GetComponents<AudioSource>();
-      //  this._cloudSound = this._audioSources[1];
-       // this._islandSound = this._audioSources[2];
+        this._audioSources = gameObject.GetComponents<AudioSource>();
+       this._EnemySound = this._audioSources[1];
+        this._StarSound = this._audioSources[2];
     }
 
     // Update is called once per frame
@@ -29,15 +29,15 @@ public class PlayerCollider : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Hoop"))
         {
-            Debug.Log("Hoop");
-           // this._islandSound.Play();
-           // this.gameController.ScoreValue += 100;
+           
+            this._StarSound.Play();
+           this.gameController.ScoreValue += 100;
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Enemy");
-          //  this._cloudSound.Play();
-           // this.gameController.LivesValue -= 1;
+            
+           this._EnemySound.Play();
+           this.gameController.LivesValue -= 1;
         }
     }
 
