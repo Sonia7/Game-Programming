@@ -53,6 +53,7 @@ public class GameController : MonoBehaviour {
     public Text LivesLabel;
     public Text ScoreLabel;
     public Text GameOverLabel;
+    public Text HighScoreLabel;
 
     // Use this for initialization
     void Start()
@@ -74,8 +75,10 @@ public class GameController : MonoBehaviour {
     {
         this.ScoreValue = 0;
         this.LivesValue = 5;
-
+        this.HighScoreLabel.gameObject.SetActive(false);
         this.GameOverLabel.gameObject.SetActive(false);
+      //  this.RestartButton.gameObject.SetActive(false);
+
         for (int cloudCount = 0; cloudCount < this.enemyNumber; cloudCount++)
         {
             Instantiate(No_of_Enemy.gameObject);
@@ -83,9 +86,9 @@ public class GameController : MonoBehaviour {
     }
     private void _endGame()
     {
-      //  this.HighScoreLabel.text = "High Score: " + this._scoreValue;
+      this.HighScoreLabel.text = "High Score: " + this._scoreValue;
         this.GameOverLabel.gameObject.SetActive(true);
-       // this.HighScoreLabel.gameObject.SetActive(true);
+     this.HighScoreLabel.gameObject.SetActive(true);
         this.LivesLabel.gameObject.SetActive(false);
         this.ScoreLabel.gameObject.SetActive(false);
         this.player.gameObject.SetActive(false);
