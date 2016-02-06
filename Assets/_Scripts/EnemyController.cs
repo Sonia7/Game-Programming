@@ -41,7 +41,7 @@ public class EnemyController : MonoBehaviour {
     {
         this._horizontalSpeed = Random.Range(this.minHorizontalSpeed, this.maxHorizontalSpeed);
         this._verticalDrift = Random.Range(this.minVerticalSpeed, this.maxVerticalSpeed);
-        float yPosition = Random.Range(-200f, 200f);
+        float yPosition = Random.Range(-200f, 200f);// random positions of enemy when reaches end 
         this._transform.position = new Vector2(246f, yPosition);
     }
 }

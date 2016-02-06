@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour {
         {
             this._scoreValue = value;
             this.ScoreLabel.text = "Score: " + this._scoreValue;
-        }
+        }// set score when player hit ring
     }
 
     public int LivesValue
@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour {
             {
                 this.LivesLabel.text = "lives: " + this._livesValue;
             }
-        }
+        }// set when player hit enemy
     }
 
 
@@ -76,28 +76,28 @@ public class GameController : MonoBehaviour {
     //Initial Method
     private void _initialize()
     {
-        this.ScoreValue = 0;
-        this.LivesValue = 5;
-        this.HighScoreLabel.gameObject.SetActive(false);
+        this.ScoreValue = 0;// initially score 0
+        this.LivesValue = 5;// lives to play 5 
+        this.HighScoreLabel.gameObject.SetActive(false);//initially set invisible 
         this.GameOverLabel.gameObject.SetActive(false);
       this.RestartButton.gameObject.SetActive(false);
 
         for (int cloudCount = 0; cloudCount < this.enemyNumber; cloudCount++)
         {
             Instantiate(No_of_Enemy.gameObject);
-        }
+        }// used cloudcount for enemy count
     }
     private void _endGame()
     {
       this.HighScoreLabel.text = "High Score: " + this._scoreValue;
-        this.GameOverLabel.gameObject.SetActive(true);
+        this.GameOverLabel.gameObject.SetActive(true);// set active ;that is it appears when game ends.
      this.HighScoreLabel.gameObject.SetActive(true);
-        this.LivesLabel.gameObject.SetActive(false);
-        this.ScoreLabel.gameObject.SetActive(false);
-        this.player.gameObject.SetActive(false);
-        this.star.gameObject.SetActive(false);
-      this._gameOverSound.Play();
-       this.RestartButton.gameObject.SetActive(true);
+        this.LivesLabel.gameObject.SetActive(false);// hide on end of game
+        this.ScoreLabel.gameObject.SetActive(false);// hide on end of game
+        this.player.gameObject.SetActive(false);// hide on end of game
+        this.star.gameObject.SetActive(false);// hide on end of game
+      this._gameOverSound.Play();//plays game end track
+       this.RestartButton.gameObject.SetActive(true);// show up restart button on game over
     }
     public void RestartButtonClick()
     {

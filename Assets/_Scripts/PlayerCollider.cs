@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PlayerCollider : MonoBehaviour {
-
+    // Private INSTANCE VARIABLES
     private AudioSource[] _audioSources;
     private AudioSource _StarSound;
     private AudioSource _EnemySound;
@@ -39,6 +39,6 @@ public class PlayerCollider : MonoBehaviour {
            this._EnemySound.Play();
            this.gameController.LivesValue -= 1;
         }
-    }
+    }// used when player collides with coin or enemy and produce different sounds.
 
 }

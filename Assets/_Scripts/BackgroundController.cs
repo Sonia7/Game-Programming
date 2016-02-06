@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BackgroundController : MonoBehaviour {
-
+    //Public INSTANCE VARIABLES
 
     public float speed = 5;
 
@@ -36,5 +36,5 @@ public class BackgroundController : MonoBehaviour {
     public void Reset()
     {
         this._transform.position = new Vector3(720f, 0);
-    }
+    }// reset the background page to start point
 }
